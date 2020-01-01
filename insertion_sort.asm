@@ -13,6 +13,7 @@
 # Variable definitions
 #====================================================================
 
+
 .data
 
 arg_err_msg:       				.asciiz   "Argument error"
