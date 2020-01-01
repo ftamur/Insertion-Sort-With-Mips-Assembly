@@ -4,23 +4,13 @@
 # 		                                            			    #
 #####################################################################
 
-# This file serves as a template for creating 
-# your MIPS assembly code for assignment 2
-
 .eqv MAX_LEN_BYTES 400
-
-#====================================================================
-# Variable definitions
-#====================================================================
-
 
 .data
 
 arg_err_msg:       				.asciiz   "Argument error"
 input_msg:         				.asciiz   "Input integers\n"
   
-#  You can define other data as per your need. 
-
 # string variables:
 array_size_message: 			.asciiz "Enter 0-99 number for array size: "
 newline:						.asciiz "\n"
@@ -39,13 +29,7 @@ input_array:					.space MAX_LEN_BYTES
 .globl main
 
     main:
-        #
-        # Main program entry
-        #
-        #
-        # Main body
-        # 
-    
+      
         # Check for command line arguments count and validity
         
         jal check_Arg_Count
@@ -92,8 +76,7 @@ input_array:					.space MAX_LEN_BYTES
     	
     	# load first argv into $t0.
     	lw $t0, 0($a1) 					# takes the first argv value
-    	
-    	
+    	    	
 		lb $t1, 0($t0)					# takes the first character of input
 		lb $t2, 1($t0)					# takes the second character of input
 	
@@ -192,8 +175,6 @@ input_array:					.space MAX_LEN_BYTES
     
     # Get integers from user as per value of n
     
-    ##################  YOUR CODE  ####################   
- 
  		li $v0, 4
  		la $a0, input_msg
  		syscall
@@ -233,8 +214,6 @@ input_array:					.space MAX_LEN_BYTES
   	# Insertion sort begins here
     sort_data:
 
-        ##################  YOUR CODE  ####################
-    
         # create i value
         addi $t0, $zero, 1 		# t0 is i value
         
@@ -304,8 +283,6 @@ input_array:					.space MAX_LEN_BYTES
         
        		
     remove_duplicates:
-    
-        ##################  YOUR CODE  ####################
 
         # Print sorted list with and without duplicates
         
@@ -371,8 +348,6 @@ input_array:					.space MAX_LEN_BYTES
 
 
     print_w_dup:
-
-    ##################  YOUR CODE  ####################
         
         # print the sorted_msg
         li $v0, 4
@@ -417,9 +392,7 @@ input_array:					.space MAX_LEN_BYTES
         jr	$ra
            
     print_wo_dup:
-
-    ##################  YOUR CODE  ####################
-    
+	
         # print sorted array
         # This methods also find summation of the number in the list while printing them.
         
@@ -469,13 +442,7 @@ input_array:					.space MAX_LEN_BYTES
         exit_print_array_new:
 
         jr $ra			
-        
-
-  
-	# Perform reduction
-   
-   ##################  YOUR CODE  ####################
-
+       
     printListSum:
 
         # display the list_sum_msg
