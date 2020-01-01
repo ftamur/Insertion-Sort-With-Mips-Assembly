@@ -35,10 +35,6 @@ array_size_new:					.word 0 				# keeping new array size after remove duplicates
 input_array:					.space MAX_LEN_BYTES
 
 
-#==================================================================== 
-# Program start
-#====================================================================
-
 .text
 .globl main
 
